@@ -275,7 +275,7 @@ function HighwayScene({ className }: { className?: string }) {
 export default function DiferenciaisSection() {
   return (
     <section
-      className="relative py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
+      className="relative py-10 sm:py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
       style={{ background: "#06090F" }}
     >
       {/* ── Highway background scene ── */}
@@ -286,7 +286,7 @@ export default function DiferenciaisSection() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(6,9,15,0.25) 0%, rgba(6,9,15,0.55) 55%, rgba(6,9,15,0.82) 100%)",
+              "linear-gradient(to bottom, rgba(6,9,15,0.52) 0%, rgba(6,9,15,0.68) 55%, rgba(6,9,15,0.88) 100%)",
           }}
         />
       </div>
@@ -298,7 +298,7 @@ export default function DiferenciaisSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
           viewport={{ once: true, margin: "-80px" }}
-          className="mb-10 lg:mb-16 flex flex-col items-center"
+          className="mb-8 lg:mb-14 flex flex-col items-center"
         >
           <div
             className="section-label mb-4 justify-center"
@@ -336,7 +336,7 @@ export default function DiferenciaisSection() {
             >
               <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.07)" }} />
 
-              <div className="flex items-start gap-4 sm:gap-8 py-5 sm:py-6 px-4 -mx-4 rounded-xl transition-colors duration-300 group-hover:bg-white/[0.04] cursor-default flex-wrap sm:flex-nowrap">
+              <div className="flex items-start gap-3 sm:gap-8 py-4 sm:py-6 px-3 sm:px-4 -mx-3 sm:-mx-4 rounded-xl transition-colors duration-300 group-hover:bg-white/[0.04] cursor-default flex-wrap sm:flex-nowrap">
                 <span
                   className="font-black flex-shrink-0 tabular-nums select-none mt-1"
                   style={{

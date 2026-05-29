@@ -183,14 +183,14 @@ export default function ServicosSection() {
   return (
     <section
       id="servicos"
-      className="relative py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
+      className="relative py-10 sm:py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
       style={{ background: "#FAFAFA" }}
     >
       <div className="section-divider" />
 
       <div className="max-w-7xl mx-auto">
         {/* ── Header ── */}
-        <div className="flex flex-col items-center text-center mb-10">
+        <div className="flex flex-col items-center text-center mb-7 sm:mb-10">
           <div className="section-label mb-3 justify-center">O que oferecemos</div>
           <h2
             className="font-black tracking-tight leading-none"
@@ -219,7 +219,7 @@ export default function ServicosSection() {
               }}
               viewport={{ once: true, margin: "-50px" }}
               className="group relative rounded-2xl cursor-default transition-all duration-300 hover:shadow-sm"
-              style={{ padding: "1.4rem", background: "#FFFFFF", border: "1px solid #E5E7EB" }}
+              style={{ padding: "clamp(1rem, 4vw, 1.4rem)", background: "#FFFFFF", border: "1px solid #E5E7EB" }}
             >
               <div
                 className="rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105"

@@ -117,7 +117,7 @@ export default function HeroSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgba(8,8,14,0.88) 0%, rgba(8,8,14,0.72) 45%, rgba(8,8,14,0.45) 75%, rgba(8,8,14,0.25) 100%)",
+            "linear-gradient(to bottom, rgba(8,8,14,0.72) 0%, rgba(8,8,14,0.58) 50%, rgba(8,8,14,0.72) 100%)",
         }}
       />
       {/* Bottom fade */}
@@ -126,14 +126,14 @@ export default function HeroSection() {
         style={{ background: "linear-gradient(to top, rgba(8,8,14,0.7), transparent)" }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-28 pb-16 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-20 sm:pt-28 pb-12 sm:pb-16 flex flex-col items-center text-center">
 
         {/* ── Top label ── */}
         <motion.div
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1 }}
-          className="section-label mb-8 justify-center"
+          className="section-label mb-5 sm:mb-8 justify-center"
           style={{ color: "rgba(244,241,235,0.75)" }}
         >
           ADN Transportes & Soluções Logísticas
@@ -145,7 +145,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.22, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-            className="leading-[1.05] sm:leading-[0.95] tracking-tight mb-6"
+            className="leading-[1.1] sm:leading-[0.95] tracking-tight mb-5 sm:mb-6"
             style={{
               fontFamily: "var(--font-inter)",
               fontWeight: 900,
@@ -162,9 +162,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.4 }}
-            className="max-w-[560px] leading-relaxed mb-8 sm:mb-10 px-2 sm:px-0"
+            className="max-w-[560px] leading-relaxed mb-7 sm:mb-10 px-1 sm:px-0"
             style={{
-              fontSize: "clamp(1rem, 1.6vw, 1.1rem)",
+              fontSize: "clamp(0.93rem, 3.5vw, 1.1rem)",
               color: "rgba(244,241,235,0.8)",
             }}
           >

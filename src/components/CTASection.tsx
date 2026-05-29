@@ -45,7 +45,7 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-3 mb-10"
+            className="flex items-center justify-center gap-3 mb-7 sm:mb-10"
           >
             <div className="w-7 h-px" style={{ background: "#0057B8" }} />
             <span
@@ -63,7 +63,7 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
             viewport={{ once: true }}
-            className="leading-[0.95] tracking-tight mb-8"
+            className="leading-[1.1] sm:leading-[0.95] tracking-tight mb-5 sm:mb-8"
             style={{
               fontFamily: "var(--font-inter)",
               fontWeight: 900,
@@ -80,9 +80,9 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22 }}
             viewport={{ once: true }}
-            className="leading-[1.75] mb-12 max-w-[480px]"
+            className="leading-[1.75] mb-8 sm:mb-12 max-w-[480px] px-2 sm:px-0"
             style={{
-              fontSize: "clamp(0.9rem, 1.4vw, 1rem)",
+              fontSize: "clamp(0.88rem, 3.5vw, 1rem)",
               color: "rgba(244,241,235,0.75)",
             }}
           >

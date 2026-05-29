@@ -99,9 +99,10 @@ export default function SobreSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
             viewport={{ once: true, margin: "-80px" }}
-            className="w-full lg:w-[42%] flex-shrink-0 min-h-[280px]"
+            className="w-full lg:w-[42%] flex-shrink-0"
+            style={{ minHeight: "clamp(200px, 50vw, 340px)" }}
           >
-            <div className="relative rounded-2xl overflow-hidden h-full" style={{ minHeight: "280px" }}>
+            <div className="relative rounded-2xl overflow-hidden h-full" style={{ minHeight: "clamp(200px, 50vw, 340px)" }}>
               <Image
                 src="/imagens/foto2.jpeg"
                 alt="Motorista ADN Transportes com frota na estrada"
@@ -118,13 +119,13 @@ export default function SobreSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
             viewport={{ once: true, margin: "-80px" }}
-            className="flex-1 flex flex-col justify-center gap-6"
+            className="flex-1 flex flex-col justify-center gap-4 sm:gap-6"
           >
             {/* Label + título */}
             <div>
               <div className="section-label mb-4">Quem Somos</div>
               <h2
-                className="leading-[0.92] tracking-tight"
+                className="leading-[1.1] sm:leading-[0.92] tracking-tight"
                 style={{
                   fontFamily: "var(--font-inter)",
                   fontWeight: 900,

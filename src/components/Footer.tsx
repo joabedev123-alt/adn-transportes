@@ -35,7 +35,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-10 sm:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
 
           {/* Brand */}
@@ -144,7 +144,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="mt-10 sm:mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 text-center sm:text-left"
+          className="mt-8 sm:mt-14 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 text-center sm:text-left"
           style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
         >
           <p className="text-xs" style={{ color: "rgba(248,250,252,0.22)" }}>

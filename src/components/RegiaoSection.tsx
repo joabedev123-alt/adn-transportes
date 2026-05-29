@@ -17,7 +17,7 @@ export default function RegiaoSection() {
   return (
     <section
       id="regiao"
-      className="relative py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
+      className="relative py-10 sm:py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
       style={{ background: "#FAFAFA" }}
     >
       <div className="section-divider" />
@@ -29,7 +29,7 @@ export default function RegiaoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
           viewport={{ once: true, margin: "-80px" }}
-          className="mb-10 lg:mb-16 flex flex-col items-center"
+          className="mb-8 lg:mb-14 flex flex-col items-center"
         >
           <div className="section-label mb-4 justify-center">Onde atuamos</div>
           <h2
@@ -70,7 +70,7 @@ export default function RegiaoSection() {
                   ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                 }}
                 viewport={{ once: true, margin: "-30px" }}
-                className="group flex items-center gap-4 p-4 rounded-xl cursor-default transition-colors duration-250"
+                className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl cursor-default transition-colors duration-250"
                 style={{
                   background: state.base ? "#FFFFFF" : "transparent",
                   border: state.base ? "1px solid #D1D5DB" : "1px solid #F3F4F6",
@@ -144,7 +144,7 @@ export default function RegiaoSection() {
               transition={{ delay: 0.65, duration: 0.75 }}
               viewport={{ once: true }}
               className="relative rounded-2xl overflow-hidden mt-4"
-              style={{ height: "175px" }}
+              style={{ height: "clamp(130px, 38vw, 175px)" }}
             >
               <Image
                 src="/imagens/img18.jpeg"
