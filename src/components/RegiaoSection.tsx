@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BsGeoAltFill } from "react-icons/bs";
 import Image from "next/image";
 import BrazilGlobe from "@/components/ui/BrazilGlobe";
 
@@ -83,16 +82,14 @@ export default function RegiaoSection() {
                   border: state.base ? "1px solid #D1D5DB" : "1px solid #F3F4F6",
                 }}
               >
-                <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{
-                    background: state.base ? "rgba(0,87,184,0.08)" : "rgba(214,40,40,0.06)",
-                    border: `1px solid ${state.base ? "rgba(0,87,184,0.15)" : "rgba(214,40,40,0.12)"}`,
-                  }}
-                >
-                  <BsGeoAltFill
-                    size={14}
-                    style={{ color: state.base ? "#0057B8" : "#D62828" }}
+                <div className="flex flex-col items-center gap-1 flex-shrink-0 self-stretch py-1">
+                  <div
+                    className="w-2 h-2 rounded-full"
+                    style={{ background: state.base ? "#0057B8" : "#9CA3AF" }}
+                  />
+                  <div
+                    className="flex-1 w-px"
+                    style={{ background: state.base ? "rgba(0,87,184,0.2)" : "#F3F4F6" }}
                   />
                 </div>
 
