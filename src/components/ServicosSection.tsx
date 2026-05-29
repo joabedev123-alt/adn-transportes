@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { BsTruck, BsBox, BsSignpost2, BsBuildings, BsBoxSeam, BsGearFill, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { BsTruck, BsBox, BsSignpost2, BsBuildings, BsBoxSeam, BsGearFill } from "react-icons/bs";
 import type { IconType } from "react-icons";
 import Image from "next/image";
 
@@ -63,118 +62,28 @@ const CAROUSEL = [
   { src: "/imagens/img26.jpeg", alt: "Scania HDR ao pôr do sol" },
 ];
 
-const SLIDE_SIZE_DESKTOP = 3;
-const SLIDE_SIZE_MOBILE = 1;
-
-const slideVariants = {
-  enter: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 0.5 }),
-  center: { x: 0, opacity: 1 },
-  exit:  (dir: number) => ({ x: dir < 0 ? "100%" : "-100%", opacity: 0.5 }),
-};
-
-function ServiceCarousel() {
-  const [[slideIdx, dir], setPage] = useState([0, 0]);
-  const [paused, setPaused] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 640);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  const slideSize = isMobile ? SLIDE_SIZE_MOBILE : SLIDE_SIZE_DESKTOP;
-  const totalSlides = Math.ceil(CAROUSEL.length / slideSize);
-
-  const paginate = useCallback((newDir: number) => {
-    setPage(([curr]) => [(curr + newDir + totalSlides) % totalSlides, newDir]);
-  }, [totalSlides]);
-
-  useEffect(() => {
-    if (paused) return;
-    const id = setInterval(() => paginate(1), 4000);
-    return () => clearInterval(id);
-  }, [paused, paginate]);
-
-  const visibleImages = Array.from({ length: slideSize }, (_, i) =>
-    CAROUSEL[(slideIdx * slideSize + i) % CAROUSEL.length]
-  );
-
+function PhotoGrid() {
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* Viewport com overflow-hidden para clip do slide */}
-      <div className="relative overflow-hidden rounded-2xl" style={{ height: isMobile ? "220px" : "180px" }}>
-        <AnimatePresence custom={dir} initial={false}>
-          <motion.div
-            key={slideIdx}
-            custom={dir}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
-            className={`absolute inset-0 grid gap-2 p-0 ${isMobile ? "grid-cols-1" : "grid-cols-3"}`}
-          >
-            {visibleImages.map((img, i) => (
-              <div
-                key={i}
-                className="relative rounded-xl overflow-hidden h-full"
-                style={{ background: "#E5E7EB" }}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Seta esquerda */}
-        <button
-          onClick={() => paginate(-1)}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95"
-          style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
-          aria-label="Anterior"
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+      {CAROUSEL.map((img, i) => (
+        <motion.div
+          key={img.src}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ delay: i * 0.04, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "-30px" }}
+          className="relative overflow-hidden rounded-xl"
+          style={{ aspectRatio: "4/3", background: "#E5E7EB" }}
         >
-          <BsChevronLeft size={13} className="text-white" />
-        </button>
-
-        {/* Seta direita */}
-        <button
-          onClick={() => paginate(1)}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95"
-          style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
-          aria-label="Próximo"
-        >
-          <BsChevronRight size={13} className="text-white" />
-        </button>
-      </div>
-
-      {/* Indicadores por slide */}
-      <div className="flex justify-center items-center gap-1.5 mt-3">
-        {Array.from({ length: totalSlides }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => { setPage([i, i > slideIdx ? 1 : -1]); }}
-            className="rounded-full transition-all duration-300 cursor-pointer"
-            style={{
-              width: i === slideIdx ? "20px" : "6px",
-              height: "6px",
-              background: i === slideIdx ? "#0057B8" : "#D1D5DB",
-            }}
-            aria-label={`Slide ${i + 1}`}
+          <Image
+            src={img.src}
+            alt={img.alt}
+            fill
+            className="object-cover object-center transition-transform duration-500 hover:scale-105"
+            sizes="(max-width: 640px) 50vw, 33vw"
           />
-        ))}
-      </div>
+        </motion.div>
+      ))}
     </div>
   );
 }
@@ -244,8 +153,8 @@ export default function ServicosSection() {
           ))}
         </div>
 
-        {/* ── Carrossel 3 imagens por vez ── */}
-        <ServiceCarousel />
+        {/* ── Grade de fotos ── */}
+        <PhotoGrid />
 
         {/* ── CTA ── */}
         <div className="flex justify-center mt-8">
