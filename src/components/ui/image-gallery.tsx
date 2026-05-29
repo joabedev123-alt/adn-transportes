@@ -68,16 +68,13 @@ function AnimatedImage({ alt, src, ratio, placeholder }: AnimatedImageProps) {
 	};
 
 	return (
-		<AspectRatio
-			ref={ref}
-			ratio={ratio}
-			className="bg-gray-100 dark:bg-gray-800 relative size-full rounded-xl overflow-hidden border border-gray-200 shadow-sm"
-		>
+		<div className="relative w-full rounded-xl overflow-hidden shadow-sm bg-gray-100 dark:bg-gray-800 border border-gray-200">
 			<img
+				ref={ref}
 				alt={alt}
 				src={imgSrc}
 				className={cn(
-					'size-full rounded-xl object-cover opacity-0 transition-all duration-1000 ease-in-out hover:scale-105',
+					'w-full h-auto rounded-xl object-contain opacity-0 transition-all duration-1000 ease-in-out hover:scale-105',
 					{
 						'opacity-100': isInView && !isLoading,
 					},
@@ -86,6 +83,6 @@ function AnimatedImage({ alt, src, ratio, placeholder }: AnimatedImageProps) {
 				loading="lazy"
 				onError={handleError}
 			/>
-		</AspectRatio>
+		</div>
 	);
 }

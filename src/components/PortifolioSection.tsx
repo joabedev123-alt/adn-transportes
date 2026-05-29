@@ -3,25 +3,19 @@
 import { ImageGallery } from "@/components/ui/image-gallery";
 
 const PORTIFOLIO_IMAGES = [
-  { src: "/imagens/img7.jpeg",  alt: "Operação de carga" },
-  { src: "/imagens/img8.jpeg",  alt: "Movimentação com empilhadeira" },
-  { src: "/imagens/img9.jpeg",  alt: "Carregamento em doca" },
+  { src: "/imagens/img7.jpeg", alt: "Operação de carga" },
   { src: "/imagens/img10.jpeg", alt: "Frota ADN em pátio" },
-  { src: "/imagens/img11.jpeg", alt: "Carga especial em transporte" },
-  { src: "/imagens/img12.jpeg", alt: "Carregamento de equipamento" },
   { src: "/imagens/img13.jpeg", alt: "Equipamento industrial" },
-  { src: "/imagens/img14.jpeg", alt: "Entrega em planta industrial" },
-  { src: "/imagens/img15.jpeg", alt: "Frota Mercedes em operação" },
   { src: "/imagens/img16.jpeg", alt: "Chegada ao cliente" },
-  { src: "/imagens/img17.jpeg", alt: "Frota na estrada ao entardecer" },
-  { src: "/imagens/img19.jpeg", alt: "Terminal de armazenagem" },
   { src: "/imagens/img20.jpeg", alt: "Scania em operação" },
-  { src: "/imagens/img21.jpeg", alt: "Frota na estrada" },
-  { src: "/imagens/img22.jpeg", alt: "Carregamento de carga a granel" },
   { src: "/imagens/img23.jpeg", alt: "Armazém com carga paletizada" },
-  { src: "/fotos adriel/WhatsApp Image 2026-05-29 at 16.01.21 (1).jpeg", alt: "Frota Scania" },
-  { src: "/fotos adriel/WhatsApp Image 2026-05-29 at 16.01.24.jpeg", alt: "Frota ao entardecer" },
   { src: "/fotos adriel/WhatsApp Image 2026-05-29 at 16.01.19 (1).jpeg", alt: "Nova operação logística" },
+  { src: "/imagens/img8.jpeg", alt: "Movimentação com empilhadeira" },
+  { src: "/imagens/img11.jpeg", alt: "Carga especial em transporte" },
+  { src: "/imagens/img14.jpeg", alt: "Entrega em planta industrial" },
+  { src: "/fotos adriel/WhatsApp Image 2026-05-29 at 16.01.24.jpeg", alt: "Frota na estrada ao entardecer" },
+  { src: "/imagens/img21.jpeg", alt: "Frota na estrada" },
+  { src: "/fotos adriel/WhatsApp Image 2026-05-29 at 16.01.21 (1).jpeg", alt: "Frota Scania" },
   { src: "/imagens/foto2.jpeg", alt: "Logística operacional" },
 ];
 
