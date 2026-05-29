@@ -51,7 +51,6 @@ const CAROUSEL = [
   { src: "/imagens/img15.jpeg", alt: "Frota Mercedes em operação" },
   { src: "/imagens/img16.jpeg", alt: "Chegada ao cliente" },
   { src: "/imagens/img17.jpeg", alt: "Frota na estrada ao entardecer" },
-  { src: "/imagens/img18.jpeg", alt: "Volvo FH com carga" },
   { src: "/imagens/img19.jpeg", alt: "Terminal de armazenagem" },
   { src: "/imagens/img20.jpeg", alt: "Scania em operação" },
   { src: "/imagens/img21.jpeg", alt: "Frota na estrada" },
@@ -59,7 +58,6 @@ const CAROUSEL = [
   { src: "/imagens/img23.jpeg", alt: "Armazém com carga paletizada" },
   { src: "/imagens/img24.jpeg", alt: "Frota Scania" },
   { src: "/imagens/img25.jpeg", alt: "Frota ao entardecer" },
-  { src: "/imagens/img26.jpeg", alt: "Scania HDR ao pôr do sol" },
 ];
 
 function PhotoGrid() {
