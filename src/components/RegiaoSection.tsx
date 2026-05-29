@@ -55,12 +55,6 @@ export default function RegiaoSection() {
             className="relative flex-shrink-0 w-full max-w-[280px] sm:max-w-[320px] mx-auto lg:mx-0"
           >
             <BrazilGlobe className="w-full rounded-full" />
-            <p
-              className="text-center mt-3 text-[10px] tracking-widest uppercase"
-              style={{ color: "rgba(107,114,128,0.7)", fontFamily: "var(--font-inter)" }}
-            >
-              Globo girando — estados marcados
-            </p>
           </motion.div>
 
           {/* ── State list ── */}
