@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { BsGeoAltFill, BsBuildings, BsClockHistory, BsBriefcaseFill } from "react-icons/bs";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const states = [
   "Mato Grosso",
@@ -93,7 +94,7 @@ export default function SobreSection() {
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch">
 
-          {/* ── Esquerda — Foto ── */}
+          {/* ── Esquerda — Vídeo ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -102,13 +103,15 @@ export default function SobreSection() {
             className="w-full lg:w-[42%] flex-shrink-0"
             style={{ minHeight: "clamp(200px, 50vw, 340px)" }}
           >
-            <div className="relative rounded-2xl overflow-hidden h-full" style={{ minHeight: "clamp(200px, 50vw, 340px)" }}>
-              <Image
-                src="/imagens/foto2.jpeg"
-                alt="Motorista ADN Transportes com frota na estrada"
-                fill
-                className="object-cover object-[center_20%]"
-                sizes="(max-width: 1024px) 100vw, 42vw"
+            <div className="relative rounded-2xl overflow-hidden h-full bg-gray-200" style={{ minHeight: "clamp(200px, 50vw, 340px)" }}>
+              <video
+                src="/imagens/vdi1.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                className="w-full h-full object-cover object-center absolute inset-0"
               />
             </div>
           </motion.div>
@@ -142,7 +145,7 @@ export default function SobreSection() {
             <div>
               <p
                 className="leading-[1.78] mb-3"
-                style={{ fontSize: "clamp(0.92rem, 2.5vw, 0.97rem)", color: "#6B7280" }}
+                style={{ fontSize: "clamp(0.92rem, 2.5vw, 0.97rem)", color: "#374151" }}
               >
                 A ADN Transportes & Soluções Logísticas é uma empresa especializada em
                 transporte rodoviário com presença estratégica em todo o território
@@ -151,7 +154,7 @@ export default function SobreSection() {
               </p>
               <p
                 className="leading-[1.78]"
-                style={{ fontSize: "clamp(0.86rem, 2vw, 0.9rem)", color: "#9CA3AF" }}
+                style={{ fontSize: "clamp(0.86rem, 2vw, 0.9rem)", color: "#4B5563" }}
               >
                 Nossa frota moderna, motoristas experientes e processos operacionais
                 otimizados garantem que sua logística funcione sem imprevistos —
@@ -177,8 +180,8 @@ export default function SobreSection() {
                   5+
                 </div>
                 <div
-                  className="text-xs leading-snug whitespace-pre-line text-center"
-                  style={{ color: "#6B7280" }}
+                  className="text-xs leading-snug whitespace-pre-line text-center font-medium"
+                  style={{ color: "#374151" }}
                 >
                   {"Estados\natendidos"}
                 </div>
@@ -207,8 +210,8 @@ export default function SobreSection() {
                     {value}
                   </div>
                   <div
-                    className="text-xs leading-snug whitespace-pre-line text-center"
-                    style={{ color: "#6B7280" }}
+                    className="text-xs leading-snug whitespace-pre-line text-center font-medium"
+                    style={{ color: "#374151" }}
                   >
                     {label}
                   </div>
@@ -233,8 +236,8 @@ export default function SobreSection() {
             {/* Regiões */}
             <div>
               <p
-                className="text-[11px] uppercase tracking-[0.18em] font-semibold mb-2"
-                style={{ color: "#9CA3AF", fontFamily: "var(--font-inter)" }}
+                className="text-[11px] uppercase tracking-[0.18em] font-bold mb-2"
+                style={{ color: "#4B5563", fontFamily: "var(--font-inter)" }}
               >
                 Principais regiões
               </p>
@@ -242,11 +245,11 @@ export default function SobreSection() {
                 {states.map((state) => (
                   <span
                     key={state}
-                    className="px-2.5 py-1 rounded-lg text-xs font-medium"
+                    className="px-2.5 py-1 rounded-lg text-xs font-semibold"
                     style={{
                       background: "#FFFFFF",
-                      border: "1px solid #E5E7EB",
-                      color: "#6B7280",
+                      border: "1px solid #D1D5DB",
+                      color: "#374151",
                     }}
                   >
                     {state}

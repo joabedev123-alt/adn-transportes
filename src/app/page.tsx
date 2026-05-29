@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SobreSection from "@/components/SobreSection";
 import ServicosSection from "@/components/ServicosSection";
+import PortifolioSection from "@/components/PortifolioSection";
 import DiferenciaisSection from "@/components/DiferenciaisSection";
 import RegiaoSection from "@/components/RegiaoSection";
 import CTASection from "@/components/CTASection";
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <SobreSection />
       <ServicosSection />
+      <PortifolioSection />
       <DiferenciaisSection />
       <RegiaoSection />
       <CTASection />

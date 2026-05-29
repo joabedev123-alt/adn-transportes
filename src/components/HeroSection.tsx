@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { BsArrowUpRight } from "react-icons/bs";
 import Image from "next/image";
 
@@ -86,12 +86,27 @@ function TruckEditorial({ className }: { className?: string }) {
   );
 }
 
+const heroImages = [
+  "/imagens/img26.jpeg",
+  "/imagens/img25.jpeg",
+  "/imagens/img24.jpeg",
+];
+
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
   const truckX = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // 5 segundos por imagem
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
@@ -100,16 +115,31 @@ export default function HeroSection() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: "#0A0A0F" }}
     >
-      {/* Background photo */}
+      {/* Background photos Carousel */}
       <div className="absolute inset-0">
-        <Image
-          src="/imagens/img26.jpeg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        <AnimatePresence>
+          {heroImages.map((src, i) => (
+            i === currentBg && (
+              <motion.div
+                key={src}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5 }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={src}
+                  alt={`Background ${i + 1}`}
+                  fill
+                  priority={i === 0}
+                  className="object-cover object-center"
+                  sizes="100vw"
+                />
+              </motion.div>
+            )
+          ))}
+        </AnimatePresence>
       </div>
 
       {/* Dark gradient overlay — heavy on left for text, lighter on right */}

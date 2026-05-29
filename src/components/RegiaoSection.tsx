@@ -2,22 +2,14 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import BrazilGlobe from "@/components/ui/BrazilGlobe";
-
-const STATES = [
-  { id: "MT", name: "Mato Grosso",        base: true,  note: "Sede — Várzea Grande" },
-  { id: "RO", name: "Rondônia",           base: false, note: "Forte atuação" },
-  { id: "GO", name: "Goiás",              base: false, note: "Forte atuação" },
-  { id: "MS", name: "Mato Grosso do Sul", base: false, note: "Forte atuação" },
-  { id: "SP", name: "São Paulo",          base: false, note: "Forte atuação" },
-];
+import BrazilMap from "@/components/ui/BrazilMap";
+import { CheckCircle2 } from "lucide-react";
 
 export default function RegiaoSection() {
-
   return (
     <section
       id="regiao"
-      className="relative py-10 sm:py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
+      className="relative py-14 sm:py-20 px-6 sm:px-10 lg:px-14 overflow-hidden"
       style={{ background: "#FAFAFA" }}
     >
       <div className="section-divider" />
@@ -29,7 +21,7 @@ export default function RegiaoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
           viewport={{ once: true, margin: "-80px" }}
-          className="mb-8 lg:mb-14 flex flex-col items-center"
+          className="mb-12 lg:mb-16 flex flex-col items-center"
         >
           <div className="section-label mb-4 justify-center">Onde atuamos</div>
           <h2
@@ -41,110 +33,65 @@ export default function RegiaoSection() {
               letterSpacing: "-0.04em",
             }}
           >
-            Região de Atuação
+            Atendemos em todo o Brasil
           </h2>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
-          {/* ── Globe interativo ── */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
+          {/* ── Mapa interativo do Brasil ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, margin: "-60px" }}
-            className="relative flex-shrink-0 w-full max-w-[280px] sm:max-w-[320px] mx-auto lg:mx-0"
+            className="relative flex-shrink-0 w-full max-w-[320px] sm:max-w-[400px] mx-auto lg:mx-0"
           >
-            <BrazilGlobe className="w-full rounded-full" />
+            <BrazilMap className="w-full" />
           </motion.div>
 
-          {/* ── State list ── */}
-          <div className="flex-1 w-full space-y-2.5">
-            {STATES.map((state, i) => (
-              <motion.div
-                key={state.id}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  delay: i * 0.09,
-                  duration: 0.6,
-                  ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-                }}
-                viewport={{ once: true, margin: "-30px" }}
-                className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl cursor-default transition-colors duration-250"
-                style={{
-                  background: state.base ? "#FFFFFF" : "transparent",
-                  border: state.base ? "1px solid #D1D5DB" : "1px solid #F3F4F6",
-                }}
-              >
-                <div className="flex flex-col items-center gap-1 flex-shrink-0 self-stretch py-1">
-                  <div
-                    className="w-2 h-2 rounded-full"
-                    style={{ background: state.base ? "#0057B8" : "#9CA3AF" }}
-                  />
-                  <div
-                    className="flex-1 w-px"
-                    style={{ background: state.base ? "rgba(0,87,184,0.2)" : "#F3F4F6" }}
-                  />
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span
-                      className="font-bold text-sm"
-                      style={{ fontFamily: "var(--font-inter)", color: "#0D0D0D" }}
-                    >
-                      {state.name}
-                    </span>
-                    {state.base && (
-                      <span
-                        className="px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wide"
-                        style={{
-                          background: "rgba(0,87,184,0.08)",
-                          color: "#0057B8",
-                          fontFamily: "var(--font-inter)",
-                        }}
-                      >
-                        Sede
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-xs mt-0.5" style={{ color: "#6B7280" }}>
-                    {state.note}
-                  </p>
-                </div>
-
-                <span
-                  className="font-black text-lg sm:text-2xl select-none flex-shrink-0"
-                  style={{
-                    fontFamily: "var(--font-inter)",
-                    color: state.base ? "rgba(0,87,184,0.35)" : "rgba(214,40,40,0.30)",
-                  }}
-                >
-                  {state.id}
-                </span>
-              </motion.div>
-            ))}
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.55, duration: 0.7 }}
+          {/* ── Informações e Foto ── */}
+          <div className="flex-1 w-full max-w-lg">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.7 }}
               viewport={{ once: true }}
-              className="pt-4 text-sm leading-relaxed"
-              style={{ color: "#6B7280" }}
+              className="mb-8"
             >
-              <span className="text-[#0057B8] font-medium">Cobertura nacional</span> — além dos
-              estados destacados, atendemos todo o Brasil mediante consulta.
-            </motion.p>
+              <h3 
+                className="text-2xl sm:text-3xl font-bold mb-4" 
+                style={{ fontFamily: "var(--font-inter)", color: "#0057B8" }}
+              >
+                Cobertura Nacional
+              </h3>
+              <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: "#4B5563" }}>
+                Com nossa matriz no Mato Grosso, possuímos estrutura logística para atender demandas em <strong>todos os estados do Brasil</strong>. 
+                Oferecemos rotas estratégicas e parceiros confiáveis para garantir que sua carga chegue ao destino com segurança e agilidade.
+              </p>
+
+              <div className="space-y-3">
+                {[
+                  "Rotas otimizadas para todas as regiões",
+                  "Monitoramento em tempo real",
+                  "Parcerias estratégicas para capilaridade",
+                  "Segurança em todo o trajeto"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#D62828] flex-shrink-0" />
+                    <span className="text-sm font-medium" style={{ color: "#374151" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
             {/* ── Fleet photo ── */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.75 }}
+              transition={{ delay: 0.4, duration: 0.75 }}
               viewport={{ once: true }}
-              className="relative rounded-2xl overflow-hidden mt-4"
-              style={{ height: "clamp(130px, 38vw, 175px)" }}
+              className="relative rounded-2xl overflow-hidden shadow-lg"
+              style={{ height: "180px" }}
             >
               <Image
                 src="/imagens/img18.jpeg"
