@@ -1,48 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, Headphones, Globe, Clock, Truck } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { BsLightningChargeFill, BsShieldCheck, BsHeadphones, BsGlobe2, BsClockHistory, BsTruck } from "react-icons/bs";
+import type { IconType } from "react-icons";
 
 const items: {
   num: string;
-  icon: LucideIcon;
+  icon: IconType;
   title: string;
   description: string;
 }[] = [
   {
     num: "01",
-    icon: Zap,
+    icon: BsLightningChargeFill,
     title: "Agilidade",
     description: "Processos otimizados e frota preparada para entregas nos menores prazos possíveis.",
   },
   {
     num: "02",
-    icon: ShieldCheck,
+    icon: BsShieldCheck,
     title: "Segurança",
     description: "Monitoramento em tempo real, seguro de carga e motoristas treinados e certificados.",
   },
   {
     num: "03",
-    icon: Headphones,
+    icon: BsHeadphones,
     title: "Atendimento Dedicado",
     description: "Canal direto para cada cliente. Disponíveis para resolver qualquer situação com rapidez.",
   },
   {
     num: "04",
-    icon: Globe,
+    icon: BsGlobe2,
     title: "Cobertura Nacional",
     description: "Atuação estratégica em MT, MS, RO, GO, SP e em todo o território brasileiro.",
   },
   {
     num: "05",
-    icon: Clock,
+    icon: BsClockHistory,
     title: "Cumprimento de Prazos",
     description: "Comprometimento rigoroso com as janelas de entrega acordadas. Sua operação não para.",
   },
   {
     num: "06",
-    icon: Truck,
+    icon: BsTruck,
     title: "Frota Moderna",
     description: "Veículos revisados, rastreados e equipados para os mais variados tipos de carga.",
   },
@@ -358,7 +358,7 @@ export default function DiferenciaisSection() {
                     border: "1px solid rgba(0,87,184,0.35)",
                   }}
                 >
-                  <Icon className="w-4 h-4 text-[#4da3ff]" strokeWidth={1.8} />
+                  <Icon size={16} className="text-[#4da3ff]" />
                 </div>
 
                 <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-8">

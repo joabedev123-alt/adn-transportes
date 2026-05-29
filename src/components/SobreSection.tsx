@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Building2, Clock, Briefcase } from "lucide-react";
+import { BsGeoAltFill, BsBuildings, BsClockHistory, BsBriefcaseFill } from "react-icons/bs";
 import Image from "next/image";
 
 const states = [
@@ -76,9 +76,9 @@ function MiniBrazilMap() {
 }
 
 const stats = [
-  { icon: Building2, value: "MT",   label: "Sede em\nVárzea Grande" },
-  { icon: Clock,     value: "24/7", label: "Disponibilidade\noperacional" },
-  { icon: Briefcase, value: "B2B",  label: "Foco\nempresarial" },
+  { icon: BsBuildings,     value: "MT",   label: "Sede em\nVárzea Grande" },
+  { icon: BsClockHistory,  value: "24/7", label: "Disponibilidade\noperacional" },
+  { icon: BsBriefcaseFill, value: "B2B",  label: "Foco\nempresarial" },
 ];
 
 export default function SobreSection() {
@@ -197,7 +197,7 @@ export default function SobreSection() {
                       border: "1px solid rgba(0,87,184,0.15)",
                     }}
                   >
-                    <Icon className="w-3.5 h-3.5 text-[#0057B8]" strokeWidth={1.8} />
+                    <Icon size={14} className="text-[#0057B8]" />
                   </div>
                   <div
                     className="font-black text-xl leading-none"
@@ -220,7 +220,7 @@ export default function SobreSection() {
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl self-start"
               style={{ background: "#FFFFFF", border: "1px solid #E5E7EB" }}
             >
-              <MapPin className="w-3 h-3 text-[#0057B8] flex-shrink-0" />
+              <BsGeoAltFill size={12} className="text-[#0057B8] flex-shrink-0" />
               <span
                 className="text-xs font-medium"
                 style={{ color: "#374151", fontFamily: "var(--font-inter)" }}

@@ -2,39 +2,39 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Truck, Package, Route, Building2, Container, Settings2, ChevronLeft, ChevronRight } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { BsTruck, BsBox, BsSignpost2, BsBuildings, BsBoxSeam, BsGearFill, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import type { IconType } from "react-icons";
 import Image from "next/image";
 
-const services: { icon: LucideIcon; title: string; description: string }[] = [
+const services: { icon: IconType; title: string; description: string }[] = [
   {
-    icon: Truck,
+    icon: BsTruck,
     title: "Transporte Rodoviário",
     description:
       "Transporte seguro e ágil de cargas em todo o território nacional. Frota moderna, rastreamento em tempo real e equipe preparada para qualquer tipo de carga — do início ao destino.",
   },
   {
-    icon: Package,
+    icon: BsBox,
     title: "Fretes",
     description: "Frete competitivo para todos os volumes, com entrega garantida e rastreabilidade.",
   },
   {
-    icon: Route,
+    icon: BsSignpost2,
     title: "Distribuição",
     description: "Redes de distribuição eficientes com múltiplos pontos de entrega e controle total.",
   },
   {
-    icon: Building2,
+    icon: BsBuildings,
     title: "Logística Empresarial",
     description: "Soluções completas que integram transporte, armazenagem e gestão de prazos.",
   },
   {
-    icon: Container,
+    icon: BsBoxSeam,
     title: "Cargas Diversas",
     description: "Especialistas em cargas secas, frigoríficas e de alto valor agregado.",
   },
   {
-    icon: Settings2,
+    icon: BsGearFill,
     title: "Soluções Sob Medida",
     description: "Desenvolvemos projetos logísticos personalizados para cada cliente.",
   },
@@ -145,7 +145,7 @@ function ServiceCarousel() {
           style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
           aria-label="Anterior"
         >
-          <ChevronLeft className="w-3.5 h-3.5 text-white" />
+          <BsChevronLeft size={13} className="text-white" />
         </button>
 
         {/* Seta direita */}
@@ -155,7 +155,7 @@ function ServiceCarousel() {
           style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
           aria-label="Próximo"
         >
-          <ChevronRight className="w-3.5 h-3.5 text-white" />
+          <BsChevronRight size={13} className="text-white" />
         </button>
       </div>
 
@@ -229,7 +229,7 @@ export default function ServicosSection() {
                   border: "1px solid rgba(0,87,184,0.15)",
                 }}
               >
-                <Icon className="w-4 h-4 text-[#0057B8]" strokeWidth={1.8} />
+                <Icon size={16} className="text-[#0057B8]" />
               </div>
               <h3
                 className="font-bold leading-tight mb-2"

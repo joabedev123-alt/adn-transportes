@@ -1,28 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { BsGeoAltFill } from "react-icons/bs";
 import Image from "next/image";
-
-const BRAZIL_PATH =
-  "M 180,5 L 200,4 L 228,9 L 255,16 L 272,26 L 292,50 L 302,78 " +
-  "L 308,108 L 312,132 L 308,152 L 300,168 L 294,182 L 302,200 " +
-  "L 308,218 L 308,240 L 296,256 L 280,270 L 266,288 L 252,310 " +
-  "L 236,332 L 218,348 L 198,358 L 174,362 L 152,357 L 132,345 " +
-  "L 112,326 L 96,304 L 82,282 L 70,258 L 60,234 L 54,210 " +
-  "L 56,188 L 66,170 L 74,150 L 70,130 L 62,108 L 56,86 " +
-  "L 60,66 L 70,48 L 88,34 L 112,22 L 140,12 L 162,6 Z";
+import BrazilGlobe from "@/components/ui/BrazilGlobe";
 
 const STATES = [
-  { id: "MT", name: "Mato Grosso",        abbr: "MT", cx: 138, cy: 178, base: true,  note: "Sede — Várzea Grande" },
-  { id: "RO", name: "Rondônia",           abbr: "RO", cx: 88,  cy: 155, base: false, note: "Forte atuação" },
-  { id: "GO", name: "Goiás",              abbr: "GO", cx: 202, cy: 212, base: false, note: "Forte atuação" },
-  { id: "MS", name: "Mato Grosso do Sul", abbr: "MS", cx: 158, cy: 258, base: false, note: "Forte atuação" },
-  { id: "SP", name: "São Paulo",          abbr: "SP", cx: 206, cy: 290, base: false, note: "Forte atuação" },
+  { id: "MT", name: "Mato Grosso",        base: true,  note: "Sede — Várzea Grande" },
+  { id: "RO", name: "Rondônia",           base: false, note: "Forte atuação" },
+  { id: "GO", name: "Goiás",              base: false, note: "Forte atuação" },
+  { id: "MS", name: "Mato Grosso do Sul", base: false, note: "Forte atuação" },
+  { id: "SP", name: "São Paulo",          base: false, note: "Forte atuação" },
 ];
 
 export default function RegiaoSection() {
-  const base = STATES.find((s) => s.base)!;
 
   return (
     <section
@@ -56,62 +47,21 @@ export default function RegiaoSection() {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
-          {/* ── SVG Map ── */}
+          {/* ── Globe interativo ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
             viewport={{ once: true, margin: "-60px" }}
-            className="relative flex-shrink-0 w-full max-w-[260px] sm:max-w-sm lg:max-w-[340px] mx-auto lg:mx-0"
+            className="relative flex-shrink-0 w-full max-w-[280px] sm:max-w-[320px] mx-auto lg:mx-0"
           >
-            <svg viewBox="30 0 300 380" className="w-full h-auto">
-              <path
-                d={BRAZIL_PATH}
-                fill="rgba(15,15,15,0.03)"
-                stroke="rgba(15,15,15,0.14)"
-                strokeWidth="0.9"
-              />
-              {STATES.filter((s) => !s.base).map((s) => (
-                <line
-                  key={s.id}
-                  x1={base.cx} y1={base.cy}
-                  x2={s.cx}    y2={s.cy}
-                  stroke="rgba(0,87,184,0.35)"
-                  strokeWidth="0.9"
-                  className="dash-animated"
-                />
-              ))}
-              {STATES.map((st) => (
-                <g key={st.id}>
-                  <motion.circle
-                    cx={st.cx} cy={st.cy}
-                    r={st.base ? 20 : 14}
-                    fill="transparent"
-                    stroke={st.base ? "rgba(0,87,184,0.22)" : "rgba(214,40,40,0.18)"}
-                    strokeWidth="0.8"
-                    animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.08, 1] }}
-                    transition={{ duration: 2.8, repeat: Infinity, delay: Math.random() * 1.5 }}
-                    style={{ originX: `${st.cx}px`, originY: `${st.cy}px` }}
-                  />
-                  <circle
-                    cx={st.cx} cy={st.cy}
-                    r={st.base ? 6 : 4.5}
-                    fill={st.base ? "#0057B8" : "#D62828"}
-                  />
-                  <text
-                    x={st.cx} y={st.cy + (st.base ? 18 : 15)}
-                    textAnchor="middle"
-                    fontSize={st.base ? "9.5" : "8.5"}
-                    fontWeight="700"
-                    fill={st.base ? "#0057B8" : "#D62828"}
-                    fontFamily="var(--font-inter), sans-serif"
-                    letterSpacing="0.05em"
-                  >
-                    {st.abbr}
-                  </text>
-                </g>
-              ))}
-            </svg>
+            <BrazilGlobe className="w-full rounded-full" />
+            <p
+              className="text-center mt-3 text-[10px] tracking-widest uppercase"
+              style={{ color: "rgba(107,114,128,0.7)", fontFamily: "var(--font-inter)" }}
+            >
+              Globo girando — estados marcados
+            </p>
           </motion.div>
 
           {/* ── State list ── */}
@@ -140,8 +90,8 @@ export default function RegiaoSection() {
                     border: `1px solid ${state.base ? "rgba(0,87,184,0.15)" : "rgba(214,40,40,0.12)"}`,
                   }}
                 >
-                  <MapPin
-                    className="w-3.5 h-3.5"
+                  <BsGeoAltFill
+                    size={14}
                     style={{ color: state.base ? "#0057B8" : "#D62828" }}
                   />
                 </div>
@@ -179,7 +129,7 @@ export default function RegiaoSection() {
                     color: state.base ? "rgba(0,87,184,0.18)" : "rgba(214,40,40,0.14)",
                   }}
                 >
-                  {state.abbr}
+                  {state.id}
                 </span>
               </motion.div>
             ))}

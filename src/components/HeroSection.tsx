@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { BsArrowUpRight } from "react-icons/bs";
 import Image from "next/image";
 
 /* Precomputed spoke offsets for 6-bolt wheel (r=9, angles 0°,60°,…,300°) */
@@ -204,7 +204,7 @@ export default function HeroSection() {
               }}
             >
               Solicitar Orçamento
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-px group-hover:-translate-y-px" />
+              <BsArrowUpRight size={15} className="transition-transform group-hover:translate-x-px group-hover:-translate-y-px" />
             </a>
           </motion.div>
 

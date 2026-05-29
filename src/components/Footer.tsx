@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone } from "lucide-react";
+import { BsGeoAltFill, BsTelephoneFill } from "react-icons/bs";
 
 const navLinks = [
   { label: "Início",            href: "#inicio"   },
@@ -108,7 +108,7 @@ export default function Footer() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-3.5 h-3.5 text-[#4da3ff] flex-shrink-0 mt-0.5" />
+                <BsGeoAltFill size={14} className="text-[#4da3ff] flex-shrink-0 mt-0.5" />
                 <span className="text-sm leading-snug" style={{ color: "rgba(248,250,252,0.4)" }}>
                   Várzea Grande – MT<br />
                   <span style={{ color: "rgba(248,250,252,0.25)" }}>Matriz Nacional</span>
@@ -116,7 +116,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Phone className="w-3.5 h-3.5 text-[#4da3ff] flex-shrink-0 mt-0.5" />
+                <BsTelephoneFill size={14} className="text-[#4da3ff] flex-shrink-0 mt-0.5" />
                 <div className="space-y-1.5">
                   <Link
                     href="https://wa.me/5567999293509"

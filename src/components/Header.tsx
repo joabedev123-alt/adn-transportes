@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { BsList, BsX } from "react-icons/bs";
 import Image from "next/image";
 
 const navLinks = [
@@ -92,7 +92,7 @@ export default function Header() {
               style={{ color: "rgba(255,255,255,0.82)" }}
               aria-label="Menu"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <BsX size={22} /> : <BsList size={22} />}
             </button>
           </div>
         </div>
