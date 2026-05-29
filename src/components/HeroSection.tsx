@@ -126,7 +126,7 @@ export default function HeroSection() {
         style={{ background: "linear-gradient(to top, rgba(8,8,14,0.7), transparent)" }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 pt-20 sm:pt-28 pb-12 sm:pb-16 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-10 lg:px-14 pt-16 sm:pt-28 pb-10 sm:pb-16 flex flex-col items-center text-center">
 
         {/* ── Top label ── */}
         <motion.div

@@ -114,7 +114,7 @@ export default function RegiaoSection() {
                 </div>
 
                 <span
-                  className="font-black text-2xl select-none"
+                  className="font-black text-lg sm:text-2xl select-none flex-shrink-0"
                   style={{
                     fontFamily: "var(--font-inter)",
                     color: state.base ? "rgba(0,87,184,0.18)" : "rgba(214,40,40,0.14)",

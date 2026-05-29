@@ -368,7 +368,7 @@ export default function DiferenciaisSection() {
                       fontFamily: "var(--font-inter)",
                       fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
                       color: "#F4F1EB",
-                      minWidth: "clamp(120px, 20vw, 220px)",
+                      minWidth: "clamp(100px, 28vw, 220px)",
                     }}
                   >
                     {title}

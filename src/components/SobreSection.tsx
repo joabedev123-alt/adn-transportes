@@ -85,13 +85,13 @@ export default function SobreSection() {
   return (
     <section
       id="sobre"
-      className="relative py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
+      className="relative py-10 sm:py-14 px-6 sm:px-10 lg:px-14 overflow-hidden"
       style={{ background: "#FAFAFA" }}
     >
       <div className="section-divider" />
 
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch">
 
           {/* ── Esquerda — Foto ── */}
           <motion.div
@@ -142,7 +142,7 @@ export default function SobreSection() {
             <div>
               <p
                 className="leading-[1.78] mb-3"
-                style={{ fontSize: "clamp(0.88rem, 1.4vw, 0.97rem)", color: "#6B7280" }}
+                style={{ fontSize: "clamp(0.92rem, 2.5vw, 0.97rem)", color: "#6B7280" }}
               >
                 A ADN Transportes & Soluções Logísticas é uma empresa especializada em
                 transporte rodoviário com presença estratégica em todo o território
@@ -151,7 +151,7 @@ export default function SobreSection() {
               </p>
               <p
                 className="leading-[1.78]"
-                style={{ fontSize: "clamp(0.82rem, 1.2vw, 0.9rem)", color: "#9CA3AF" }}
+                style={{ fontSize: "clamp(0.86rem, 2vw, 0.9rem)", color: "#9CA3AF" }}
               >
                 Nossa frota moderna, motoristas experientes e processos operacionais
                 otimizados garantem que sua logística funcione sem imprevistos —
@@ -160,7 +160,7 @@ export default function SobreSection() {
             </div>
 
             {/* Cards — mapa + ícones */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
 
               {/* Card especial: mini mapa do Brasil */}
               <div

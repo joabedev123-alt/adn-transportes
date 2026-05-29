@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
 
             <p
-              className="text-sm leading-[1.75] mb-6 max-w-[280px]"
+              className="text-sm leading-[1.75] mb-5 sm:mb-6 max-w-full sm:max-w-[280px]"
               style={{ color: "rgba(248,250,252,0.6)" }}
             >
               ADN Transportes & Soluções Logísticas — especializada em transporte

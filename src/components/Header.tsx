@@ -53,7 +53,7 @@ export default function Header() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
-        <div className="flex items-center justify-between h-16 sm:h-20 overflow-visible">
+        <div className="flex items-center justify-between h-14 sm:h-18 overflow-visible">
 
           {/* ── Logo ── */}
           <button
@@ -65,7 +65,7 @@ export default function Header() {
               alt="ADN Transportes"
               width={110}
               height={60}
-              style={{ objectFit: "contain", height: "clamp(72px, 18vw, 130px)", width: "auto" }}
+              style={{ objectFit: "contain", height: "clamp(44px, 12vw, 100px)", width: "auto", maxHeight: "52px" }}
               priority
             />
           </button>
@@ -114,7 +114,7 @@ export default function Header() {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="block w-full text-left px-4 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all hover:bg-white/[0.06]"
+                  className="block w-full text-left px-4 py-3.5 rounded-xl text-sm font-medium cursor-pointer transition-all hover:bg-white/[0.06]"
                   style={{ color: "rgba(255,255,255,0.82)", fontFamily: "var(--font-outfit)" }}
                 >
                   {link.label}

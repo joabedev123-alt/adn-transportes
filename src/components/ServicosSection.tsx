@@ -62,7 +62,7 @@ const CAROUSEL = [
 
 function PhotoGrid() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
       {CAROUSEL.map((img, i) => (
         <motion.div
           key={img.src}
@@ -113,7 +113,7 @@ export default function ServicosSection() {
         </div>
 
         {/* ── Grid 2 × 3 ── */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5 mb-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2.5 mb-4 sm:mb-6">
           {services.map(({ icon: Icon, title, description }, i) => (
             <motion.div
               key={title}
