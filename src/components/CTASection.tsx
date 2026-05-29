@@ -49,7 +49,7 @@ export default function CTASection() {
           >
             <div className="w-7 h-px" style={{ background: "#0057B8" }} />
             <span
-              className="text-[11px] font-semibold tracking-[0.26em] uppercase"
+              className="text-xs font-semibold tracking-[0.2em] uppercase"
               style={{ color: "#4da3ff", fontFamily: "var(--font-inter)" }}
             >
               Pronto para começar?
@@ -144,7 +144,7 @@ export default function CTASection() {
             {["Resposta em minutos", "Orçamento sem compromisso", "Atendimento B2B"].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <div className="w-1 h-1 rounded-full bg-[#0057B8]" />
-                <span className="text-xs" style={{ color: "rgba(244,241,235,0.58)" }}>
+                <span className="text-xs" style={{ color: "rgba(244,241,235,0.78)" }}>
                   {item}
                 </span>
               </div>

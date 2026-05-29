@@ -97,7 +97,7 @@ export default function RegiaoSection() {
                     </span>
                     {state.base && (
                       <span
-                        className="px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider"
+                        className="px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wide"
                         style={{
                           background: "rgba(0,87,184,0.08)",
                           color: "#0057B8",
@@ -117,7 +117,7 @@ export default function RegiaoSection() {
                   className="font-black text-lg sm:text-2xl select-none flex-shrink-0"
                   style={{
                     fontFamily: "var(--font-inter)",
-                    color: state.base ? "rgba(0,87,184,0.18)" : "rgba(214,40,40,0.14)",
+                    color: state.base ? "rgba(0,87,184,0.35)" : "rgba(214,40,40,0.30)",
                   }}
                 >
                   {state.id}

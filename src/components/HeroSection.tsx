@@ -229,7 +229,7 @@ export default function HeroSection() {
                 >
                   {s.value}
                 </span>
-                <span className="text-xs" style={{ color: "rgba(244,241,235,0.65)" }}>
+                <span className="text-xs" style={{ color: "rgba(244,241,235,0.82)" }}>
                   {s.label}
                 </span>
                 {i < 3 && (

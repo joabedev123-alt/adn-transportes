@@ -343,7 +343,7 @@ export default function DiferenciaisSection() {
                     fontFamily: "var(--font-inter)",
                     fontSize: "0.72rem",
                     letterSpacing: "0.06em",
-                    color: "rgba(255,255,255,0.22)",
+                    color: "rgba(255,255,255,0.42)",
                     width: "2rem",
                     textAlign: "right",
                   }}

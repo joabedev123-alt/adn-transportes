@@ -41,13 +41,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             {/* Logo */}
-            <div className="mb-5">
+            <div className="mb-6">
               <Image
-                src="/imagens/logo-adn.png"
+                src="/imagens/logo-sem-fundo.png"
                 alt="ADN Transportes"
-                width={130}
-                height={70}
-                style={{ objectFit: "contain", height: "clamp(70px, 18vw, 110px)", width: "auto" }}
+                width={180}
+                height={80}
+                style={{ objectFit: "contain", height: "clamp(60px, 16vw, 90px)", width: "auto" }}
               />
             </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-200 hover:text-white group"
-              style={{ color: "rgba(248,250,252,0.4)" }}
+              style={{ color: "rgba(248,250,252,0.65)" }}
             >
               <InstagramIcon className="w-4 h-4 text-[#E1306C]" />
               @adntransportes
@@ -109,9 +109,9 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start gap-2.5">
                 <BsGeoAltFill size={14} className="text-[#4da3ff] flex-shrink-0 mt-0.5" />
-                <span className="text-sm leading-snug" style={{ color: "rgba(248,250,252,0.4)" }}>
+                <span className="text-sm leading-snug" style={{ color: "rgba(248,250,252,0.72)" }}>
                   Várzea Grande – MT<br />
-                  <span style={{ color: "rgba(248,250,252,0.25)" }}>Matriz Nacional</span>
+                  <span style={{ color: "rgba(248,250,252,0.50)" }}>Matriz Nacional</span>
                 </span>
               </div>
 
@@ -123,7 +123,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-sm cursor-pointer transition-colors duration-200 hover:text-white"
-                    style={{ color: "rgba(248,250,252,0.45)" }}
+                    style={{ color: "rgba(248,250,252,0.72)" }}
                   >
                     (67) 99929-3509
                   </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-sm cursor-pointer transition-colors duration-200 hover:text-white"
-                    style={{ color: "rgba(248,250,252,0.45)" }}
+                    style={{ color: "rgba(248,250,252,0.72)" }}
                   >
                     (65) 99984-6280
                   </Link>
@@ -147,10 +147,10 @@ export default function Footer() {
           className="mt-8 sm:mt-14 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 text-center sm:text-left"
           style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
         >
-          <p className="text-xs" style={{ color: "rgba(248,250,252,0.22)" }}>
+          <p className="text-xs" style={{ color: "rgba(248,250,252,0.55)" }}>
             © {new Date().getFullYear()} ADN Transportes & Soluções Logísticas.
           </p>
-          <p className="text-xs" style={{ color: "rgba(248,250,252,0.18)" }}>
+          <p className="text-xs" style={{ color: "rgba(248,250,252,0.48)" }}>
             Várzea Grande · MT · Brasil
           </p>
           <a
@@ -158,7 +158,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs transition-colors duration-200 hover:text-white"
-            style={{ color: "rgba(248,250,252,0.22)" }}
+            style={{ color: "rgba(248,250,252,0.55)" }}
           >
             Produzida com 💚 por CAMALY
           </a>

@@ -177,7 +177,7 @@ export default function SobreSection() {
                   5+
                 </div>
                 <div
-                  className="text-[10px] leading-snug whitespace-pre-line text-center"
+                  className="text-xs leading-snug whitespace-pre-line text-center"
                   style={{ color: "#6B7280" }}
                 >
                   {"Estados\natendidos"}
@@ -207,7 +207,7 @@ export default function SobreSection() {
                     {value}
                   </div>
                   <div
-                    className="text-[10px] leading-snug whitespace-pre-line text-center"
+                    className="text-xs leading-snug whitespace-pre-line text-center"
                     style={{ color: "#6B7280" }}
                   >
                     {label}
@@ -233,7 +233,7 @@ export default function SobreSection() {
             {/* Regiões */}
             <div>
               <p
-                className="text-[9px] uppercase tracking-[0.22em] font-semibold mb-2"
+                className="text-[11px] uppercase tracking-[0.18em] font-semibold mb-2"
                 style={{ color: "#9CA3AF", fontFamily: "var(--font-inter)" }}
               >
                 Principais regiões
@@ -242,7 +242,7 @@ export default function SobreSection() {
                 {states.map((state) => (
                   <span
                     key={state}
-                    className="px-2.5 py-1 rounded-lg text-[11px] font-medium"
+                    className="px-2.5 py-1 rounded-lg text-xs font-medium"
                     style={{
                       background: "#FFFFFF",
                       border: "1px solid #E5E7EB",
