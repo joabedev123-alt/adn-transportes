@@ -65,7 +65,7 @@ export default function Header() {
               alt="ADN Transportes"
               width={110}
               height={60}
-              style={{ objectFit: "contain", height: "clamp(44px, 12vw, 100px)", width: "auto", maxHeight: "52px" }}
+              style={{ objectFit: "contain", height: "clamp(64px, 14vw, 120px)", width: "auto" }}
               priority
             />
           </button>
